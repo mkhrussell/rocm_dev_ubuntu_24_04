@@ -1,0 +1,26 @@
+services:
+  rocm-pytorch:
+    build:
+      context: ./rocm_dev
+      dockerfile: Dockerfile
+    container_name: rocm_dev_ubuntu_24_04
+    hostname: rocm-dev-ubuntu-24.04
+    group_add:
+      - video
+      - render
+    devices:
+      - /dev/kfd
+      - /dev/dri
+    security_opt:
+      - seccomp:unconfined
+    tty: true
+    stdin_open: true
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - ${HOST_WORKING_DIR}:${WORKING_DIR}
+    user: ${USER_NAME}
+    command: /bin/bash
+    working_dir: ${WORKING_DIR}
+
+
