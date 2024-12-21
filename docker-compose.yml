@@ -3,6 +3,9 @@ services:
     build:
       context: ./rocm_dev
       dockerfile: Dockerfile
+      args:
+        ROCM_VERSION: ${ROCM_VERSION}
+        AMD_GPU_INSTALLER_DEB: ${AMD_GPU_INSTALLER_DEB}
     container_name: rocm_dev_ubuntu_24_04
     hostname: rocm-dev-ubuntu-24.04
     group_add:

@@ -10,7 +10,7 @@ deploy_deps="libffi-dev libbz2-dev libreadline-dev libncurses5-dev libncursesw5-
 numpy_deps="gfortran"
 
 # Run apt-get to install common dependencies
-DEBIAN_FRONTEND=noninteractive apt-get install -y --allow-unauthenticated --no-install-recommends \
+apt-get install -y --allow-unauthenticated --no-install-recommends \
     $ccache_deps \
     $numpy_deps \
     $deploy_deps \

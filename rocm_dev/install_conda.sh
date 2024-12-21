@@ -13,8 +13,7 @@ gpg --keyring /usr/share/keyrings/conda-archive-keyring.gpg --no-default-keyring
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/conda-archive-keyring.gpg] https://repo.anaconda.com/pkgs/misc/debrepo/conda stable main" > /etc/apt/sources.list.d/conda.list
 
 # Install conda
-apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y --allow-unauthenticated --no-install-recommends conda
+apt-get update && apt-get install -y --allow-unauthenticated --no-install-recommends conda
 
 # Cleanup package manager
 apt-get autoclean && apt-get clean
